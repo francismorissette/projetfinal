@@ -24,7 +24,7 @@ if (!$connexion=@mysql_connect(SERVEUR,USAGER,PASSWORD)){
 	} catch ( Exception $e ) {
 	    //echo $e->getMessage();
 		echo "Probleme de connexion au serveur de bd";
-		exit();
+		exit(); TEST
 	}*/
 
 
