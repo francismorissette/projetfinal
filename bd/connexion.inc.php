@@ -37,5 +37,5 @@ catch (PDOException $e) {
 	$msg = 'ERREUR PDO dans ' .$e->getMessage();
 	die ($msg);
 }
-/*fffff*/
+
 ?>
