@@ -6,6 +6,14 @@ header{
   background-color: #F68C5F;
 }
 
+.headerAcheter{
+  height: 150px;
+}
+
+.titreAcheter{
+  margin-top: -55px;
+}
+
 .btn{
   background-color: #343A40;
   border: none;
@@ -13,4 +21,8 @@ header{
 
 .btn:hover{
   background-color: #43486A;
+}
+
+.btnRecherche{
+  width: 100%;
 }
