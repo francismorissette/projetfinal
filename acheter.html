@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="Projet final">
+  <meta name="author" content="Francis Morissette">
+
+  <title>Second Souffle</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Notre CSS -->
+  <link href="css/style.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">Second Souffle</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="#">Accueil</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">À propos</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Contact</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Header -->
+  <header class="py-5 mb-5 headerAcheter">
+    <div class="container h-100 topbanner">
+      <div class="row h-100 align-items-center">
+        <div class="col-lg-12 titreAcheter">
+          <h1 class="display-4 text-white mt-5 mb-2">Rechercher et Acheter nos livres</h1>
+          <!-- <p class="lead mb-5 text-white-50">La place pour trouver et donner une deuxième vie aux livres d'école.</p> -->
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Page Content -->
+  <div class="container">
+
+    <div class="row">
+      <div class="col-md-3 mb-5">
+        <h3>Recherche</h3>
+        <hr>
+        <div class="col-sm-13 mb-5">
+          <div class="form-group">
+            <p>Écoles</p>
+            <select class="form-control" name="ecole" id="ecole">
+              <option selected disabled hidden>Choisir une école</option>
+              <option>Collège Ahuntsic</option>
+              <option>Cégep André-Laurendeau</option>
+              <option>Collège de Bois-de-Boulogne</option>
+              <option>Collège de Maisonneuve</option>
+              <option>Cégep de Saint-Laurent</option>
+              <option>Cégep du Vieux Montréal</option>
+              <option>Cégep Marie-Victorin</option>
+              <option>Collège Gérald-Godin</option>
+              <option>Institut de tourisme et d'hôtellerie du Québec</option>
+              <option>Dawson College</option>
+              <option>John Abbott College</option>
+              <option>Vanier College</option>
+              <option>Collège André-Grasset</option>
+              <option>Collège de photographie Marsan</option>
+              <option>Collège Jean-de-Brébeuf</option>
+              <option>Collège LaSalle</option>
+              <option>Collège international des Marcellines</option>
+              <option>Marianopolis College</option>
+              <option>Collège international Marie-de-France</option>
+              <option>Collège Stanislas</option>
+              <option>Collège Sainte-Anne</option>
+              <option>Collège Canada</option>
+              <option>Autre</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="col-sm-13 mb-5">
+          <div class="form-group">
+            <p>Départements</p>
+            <select class="form-control" id="departement" name="departement">
+              <option selected disabled hidden>Choisir un département</option>
+              <option>Archives médicales</option>
+              <option>Biologie et Biotechnologie</option>
+              <option>Chimie</option>
+              <option>Cinéma, Histoire de l'Art</option>
+              <option>Éducation physique</option>
+              <option>Électrophysiologie médicale</option>
+              <option>Français et Lettres</option>
+              <option>Génie civil et Dessin technique</option>
+              <option>Géomatique (géodésie)</option>
+              <option>Gestion</option>
+              <option>Graphisme</option>
+              <option>Infographie</option>
+              <option>Informatique</option>
+              <option>Langues : anglais et langues modernes</option>
+              <option>Mathématiques</option>
+              <option>Mécanique du bâtiment</option>
+              <option>Médecine nucléaire</option>
+              <option>Philosophie</option>
+              <option>Physique</option>
+              <option>Radio-oncologie</option>
+              <option>Radiodiagnostic</option>
+              <option>Sciences sociales</option>
+              <option>Soins préhospitaliers d'urgence</option>
+              <option>Techniques auxiliaires de la justice</option>
+              <option>Techniques de l'impression</option>
+              <option>Technologie du génie industriel</option>
+              <option>Technologies du génie électrique</option>
+              <option>Autre</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="col-sm-13 mb-5">
+          <div class="form-group">
+            <a class="btn btn-primary btn-lg btnRecherche" href="#" onclick="requetes('searchCategorie');">Recherche &raquo;</a>
+          </div>
+        </div>
+        <br>
+        <h3>Recherche avancé</h3>
+        <hr>
+        <br>
+        <div class="col-sm-13 mb-5">
+          <div class="form-group">
+            <a class="btn btn-primary btn-lg btnRecherche" href="#" data-toggle="modal" data-target="#searchModal">Recherche Avancer &raquo;</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-9 mb-5">
+        <h3>Liste des Livres</h3>
+        <hr>
+        <div class="row">
+          <div class='col-sm-4 mb-5' id="contenu1"></div>
+          <div class='col-sm-4 mb-5' id="contenu2"></div>
+          <div class='col-sm-4 mb-5' id="contenu3"></div>
+          <div class='col-sm-4 mb-5' id="contenu4"></div>
+          <div class='col-sm-4 mb-5' id="contenu5"></div>
+          <div class='col-sm-4 mb-5' id="contenu6"></div>
+        </div>
+      </div>
+    </div>
+    <!-- /.row -->
+
+  </div>
+  <!-- /.container -->
+
+  <!-- Modal -->
+  <div class="modal fade" id="searchModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="searchModal">Recherche avancé</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="col-sm-12 mb-3">
+            <div class="form-group">
+              <label for="searchTitre">Titre</label>
+              <input type="text" class="form-control" id="searchTitre" >
+            </div>
+          </div>
+
+          <div class="col-sm-12 mb-3">
+            <div class="form-group">
+              <label for="searchAuteur">Auteur</label>
+              <input type="text" class="form-control" id="searchAuteur" >
+            </div>
+          </div>
+
+          <div class="col-sm-12 mb-3">
+            <div class="form-group">
+              <label for="searchLangue">Langue</label>
+              <input type="text" class="form-control" id="searchLangue">
+            </div>
+          </div>
+
+          <div class="col-sm-12">
+            <div class="form-group">
+              <label for="searchDepartement">Département</label>
+              <select class="form-control" name="searchDepartement" id="searchDepartement">
+                <option selected disabled hidden>Choisir un département</option>
+                <option>Archives médicales</option>
+                <option>Biologie et Biotechnologie</option>
+                <option>Chimie</option>
+                <option>Cinéma, Histoire de l'Art</option>
+                <option>Éducation physique</option>
+                <option>Électrophysiologie médicale</option>
+                <option>Français et Lettres</option>
+                <option>Génie civil et Dessin technique</option>
+                <option>Géomatique (géodésie)</option>
+                <option>Gestion</option>
+                <option>Graphisme</option>
+                <option>Infographie</option>
+                <option>Informatique</option>
+                <option>Langues : anglais et langues modernes</option>
+                <option>Mathématiques</option>
+                <option>Mécanique du bâtiment</option>
+                <option>Médecine nucléaire</option>
+                <option>Philosophie</option>
+                <option>Physique</option>
+                <option>Radio-oncologie</option>
+                <option>Radiodiagnostic</option>
+                <option>Sciences sociales</option>
+                <option>Soins préhospitaliers d'urgence</option>
+                <option>Techniques auxiliaires de la justice</option>
+                <option>Techniques de l'impression</option>
+                <option>Technologie du génie industriel</option>
+                <option>Technologies du génie électrique</option>
+                <option>Autre</option>
+              </select>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
+          <button type="button" class="btn btn-primary" data-dismiss="modal" onclick="requetes('searchAvance');">Recherche</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="py-5 bg-dark">
+    <div class="container">
+      <p class="m-0 text-center text-white">Copyright &copy; Second Souffle 2019</p>
+    </div>
+    <!-- /.container -->
+  </footer>
+
+  <!-- Bootstrap JavaScript -->
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Notre JavaScript -->
+  <script src="requetes/requetesLivres.js"></script>
+  <script src="vues/vuesLivres.js"></script>
+
+
+</body>
+
+</html>
