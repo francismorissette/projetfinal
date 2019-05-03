@@ -135,7 +135,7 @@
 
         <div class="col-sm-13 mb-5">
           <div class="form-group">
-            <a class="btn btn-primary btn-lg btnRecherche" href="#" onclick="requetes('searchCategorie');">Recherche &raquo;</a>
+            <p class="btn btn-primary btn-lg btnRecherche" onclick="requetes('searchCategorie');">Recherche &raquo;</p>
           </div>
         </div>
         <br>
@@ -144,7 +144,7 @@
         <br>
         <div class="col-sm-13 mb-5">
           <div class="form-group">
-            <a class="btn btn-primary btn-lg btnRecherche" href="#" data-toggle="modal" data-target="#searchModal">Recherche Avancer &raquo;</a>
+            <p class="btn btn-primary btn-lg btnRecherche" data-toggle="modal" data-target="#searchModal">Recherche Avancer &raquo;</p>
           </div>
         </div>
       </div>
@@ -152,8 +152,10 @@
       <div class="col-md-9 mb-5">
         <h3>Liste des Livres</h3>
         <hr>
+        <div id='loadingmessage'>
+          <img class="loader" src='images/ajax-loader3.gif'/>
+        </div>
         <div id="result" class="row">
-
           <!-- <div class='col-sm-4 mb-5' id="contenu1"></div>
           <div class='col-sm-4 mb-5' id="contenu2"></div>
           <div class='col-sm-4 mb-5' id="contenu3"></div>
