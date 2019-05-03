@@ -2,23 +2,6 @@
 require_once("../bd/connexion.inc.php");
 $rep=array();
 
-// function lister(){
-// 	global $connexion, $rep;
-// 	$requette="SELECT * FROM films";
-// 	try{
-// 		 $stmt = $connexion->prepare($requette);
-// 		 $stmt->execute();
-// 		 while($ligne=$stmt->fetch(PDO::FETCH_OBJ)){
-// 			 $rep[]=$ligne;
-// 		 }
-// 	 }catch (Exception $e){
-// 	   $rep['erreur']="Probleme pour lister";
-// 	 }finally {
-// 		unset($connexion);
-// 		unset($stmt);
-// 		echo json_encode($rep);
-// 	 }
-// }
 
 function categorie(){
 	global $connexion, $rep;
@@ -70,6 +53,28 @@ function avance(){
 }
 
 
+function fiche(){
+	global $connexion, $rep;
+	$selectId = $_POST['variableId'];
+	$accents = $connexion->query("SET NAMES 'utf8'"); //FIX LES ACCENTS DANS LE ARRAY
+	$requete="SELECT * FROM livres WHERE idlivre = '$selectId'";
+
+	try{
+		$stmt = $connexion->prepare($requete);
+		$stmt->execute();
+		while($ligne=$stmt->fetch(PDO::FETCH_OBJ)){
+			$rep[]=$ligne;
+		}
+	}catch (Exception $e){
+		$rep['erreur']="Probleme pour fiche";
+	}finally {
+		unset($connexion);
+		unset($stmt);
+		echo json_encode($rep);
+	}
+}
+
+
 //controleur films
 $action=$_POST['action'];
 switch($action){
@@ -78,6 +83,9 @@ switch($action){
 	break;
 	case 'avance':
 		avance();
+	break;
+	case 'fiche':
+		fiche();
 	break;
 }
 

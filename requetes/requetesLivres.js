@@ -1,18 +1,3 @@
-// function envoyerLister(){
-// 	$.ajax({
-// 		url:'serveur/controleurFilms.php',
-// 		type:'POST',
-// 		data:{"action":'lister'},
-// 		dataType:'json',
-// 		success: function(listeFilms){
-// 			vue('listerJSON',listeFilms);
-// 		},
-// 		fail:function(){
-// 			alert("Probleme pour lister");
-// 		}
-// 	});
-// }
-
 function envoyerCategorie(){
 	selectEcole = $("#ecole").val();
 	selectDept = $("#departement").val();
@@ -49,7 +34,26 @@ function envoyerSearch(){
 		fail:function(){
 			alert('Problème pour recherche avancé')
 		}
-	})
+	});
+}
+
+
+function ficheLivres(clicked_id){
+	selectId = clicked_id;
+	alert(selectId);
+	$.ajax({
+		url:'serveur/controleurLivres.php',
+		type: 'POST',
+		data:{"action":'fiche', "variableId":selectId},
+		dataType:'json',
+		success: function (listeFiche){
+			// vue('ficheJSON',listeFiche);
+			ficheJSON(listeFiche);
+		},
+		fail:function(){
+			alert('Problème pour fiche')
+		}
+	});
 }
 
 
@@ -61,5 +65,6 @@ switch(action){
 	break;
 	case 'searchAvance' :
 		envoyerSearch();
+	break;
 	}
 }
