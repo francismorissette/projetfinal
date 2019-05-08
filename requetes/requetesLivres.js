@@ -1,7 +1,7 @@
 function envoyerCategorie(){
 	selectEcole = $("#ecole").val();
 	selectDept = $("#departement").val();
-
+	$('.loadmore').hide();
 	$('#loadingmessage').show();
 	$('#result').slideUp();
 
@@ -14,6 +14,7 @@ function envoyerCategorie(){
 			vue('listerJSON',listeCategorie);
 			$('#loadingmessage').hide();
 			$('#result').slideDown();
+			$('.loadmore').show();
 		},
 		fail:function(){
 			alert("Probleme pour categorie");
@@ -28,6 +29,7 @@ function envoyerSearch(){
 	selectLangue = $("#searchLangue").val();
 	selectDepartement = $("#searchDepartement").val();
 
+	$('.loadmore').hide();
 	$('#loadingmessage').show();
 	$('#result').slideUp();
 
@@ -40,6 +42,7 @@ function envoyerSearch(){
 			vue('listerJSON',listeAvance);
 			$('#loadingmessage').hide();
 			$('#result').slideDown();
+			$('.loadmore').show();
 		},
 		fail:function(){
 			alert('Problème pour recherche avancé')
@@ -51,6 +54,7 @@ function envoyerSearch(){
 function ficheLivres(clicked_id){
 	selectId = clicked_id;
 
+	$('.loadmore').hide();
 	$('#loadingmessage').show();
 	$('#result').slideUp();
 
